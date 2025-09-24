@@ -1,0 +1,139 @@
+{
+  "info": {
+    "name": "HRMS Backend",
+    "_postman_id": "12345678-aaaa-bbbb-cccc-123456789abc",
+    "description": "Postman collection for testing HRMS backend on Railway",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Offers",
+      "item": [
+        {
+          "name": "Get All Offers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/offers"
+          }
+        },
+        {
+          "name": "Create Offer",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fullname\": \"John Doe\",\n  \"emailAddress\": \"johndoe@example.com\",\n  \"position\": \"Software Engineer\",\n  \"department\": \"Engineering\",\n  \"salary\": 75000,\n  \"date\": \"2025-10-01\",\n  \"location\": \"Remote\"\n}"
+            },
+            "url": "{{baseUrl}}/api/offers"
+          }
+        },
+        {
+          "name": "Get Offer By ID",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/offers/1"
+          }
+        },
+        {
+          "name": "Update Offer",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"Accepted\"\n}"
+            },
+            "url": "{{baseUrl}}/api/offers/1"
+          }
+        },
+        {
+          "name": "Delete Offer",
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/offers/1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Templates",
+      "item": [
+        {
+          "name": "Get All Templates",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/template" }
+        },
+        {
+          "name": "Create Template",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Default Template\",\n  \"department\": \"Engineering\",\n  \"status\": \"Active\"\n}"
+            },
+            "url": "{{baseUrl}}/api/template"
+          }
+        },
+        {
+          "name": "Get Template By ID",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/template/1" }
+        },
+        {
+          "name": "Update Template",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"Draft\"\n}"
+            },
+            "url": "{{baseUrl}}/api/template/1"
+          }
+        },
+        {
+          "name": "Delete Template",
+          "request": { "method": "DELETE", "url": "{{baseUrl}}/api/template/1" }
+        }
+      ]
+    },
+    {
+      "name": "Time Entries",
+      "item": [
+        {
+          "name": "Get All Time Entries",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/time" }
+        },
+        {
+          "name": "Create Time Entry",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"date\": \"2025-10-01\",\n  \"hour\": 8,\n  \"activity\": \"Development\",\n  \"description\": \"Worked on HRMS features\"\n}"
+            },
+            "url": "{{baseUrl}}/api/time"
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://inartiaassessment-production.up.railway.app"
+    }
+  ]
+}

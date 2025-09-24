@@ -18,6 +18,10 @@ app.use("/api/offers", offerRoutes);
 app.use("/api/time", timeRoutes);
 app.use("/api/template", templateRoutes);
 
+app.get("/", (req, res) => {
+  res.send("Backend is running. Use /api/offers, /api/template, or /api/time");
+});
+
 
 sequelize.sync({ alter: true }).then(() => {
   console.log(" Database synced");
